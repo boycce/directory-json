@@ -13,7 +13,7 @@ commander
   .option('-c, --cwd <dir>', 'Relative from this directory')
   .option('-r, --recurse', 'Recurse sub-directories')
   .option('-l, --hash-length <n>', 'Length of the hash to remove from key names', parseInt)
-  .option('-p, --pretty', 'Pretty print the JSON output')
+  .option('-p, --prettify', 'Prettify the JSON output')
   .parse(process.argv)
 
 // No directory passed
@@ -22,8 +22,8 @@ if (!commander.args.length) commander.help()
 var opts = {
   cwd: commander.cwd,
   recurse: commander.recurse,
-  hashLength: commander.removeHash,
-  pretty: commander.pretty
+  hashLength: commander.hashLength,
+  prettify: commander.prettify
 }
 
 dirjson(commander.args[0], opts, function (err, res) {

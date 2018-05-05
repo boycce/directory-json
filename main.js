@@ -32,13 +32,13 @@ function init (dir, options, done) {
     cwd: '.',
     recurse: true,
     hashLength: 0,
-    pretty: false
+    prettify: false
   })
 
   // Main task, then return json
   dirObject(dir, options, function (err, res) {
     if (err) return done(err)
-    done(null, JSON.stringify(res, null, (options.pretty ? 2 : null)))
+    done(null, JSON.stringify(res, null, (options.prettify ? 2 : null)))
   })
 }
 
@@ -114,9 +114,9 @@ function processFile (filename, dirinfo, options, done) {
  * return string
  */
 function processKey (filename, hashLength) {
-  var re = new RegExp('\\.[a-zA-Z0-9]{' + hashLength + '}\\.[\\w]{1,4}$')
-  if (!hashLength) return path.basename(filename)
-  else return filename.replace(re, '')
+  var re = new RegExp('\\.[a-zA-Z0-9]{' + hashLength + '}(\\.[\\w]{1,4})$')
+  if (hashLength) filename = filename.replace(re, '$1')
+  return filename.replace(/\.[\w]{1,4}$/, '')
 }
 
 module.exports = init
