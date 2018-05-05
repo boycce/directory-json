@@ -1,9 +1,9 @@
 /*
- * dirjson
+ * directory-json
  *
  * Copyright (c) 2018 Ricky Boyce
  * Licensed under the MIT license.
- * https://github.com/Boycce/dirjson/blob/master/LICENSE
+ * https://github.com/Boycce/directory-json/blob/master/LICENSE
  */
 
 'use strict'

@@ -2,7 +2,7 @@
 
 'use strict'
 
-var dirjson = require('../main')
+var directoryJson = require('../main')
 var commander = require('commander')
 
 // Parse arguments
@@ -26,7 +26,7 @@ var opts = {
   prettify: commander.prettify
 }
 
-dirjson(commander.args[0], opts, function (err, res) {
+directoryJson(commander.args[0], opts, function (err, res) {
   if (err) return console.error(err)
   console.log(res)
 })

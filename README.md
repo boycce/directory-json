@@ -1,20 +1,20 @@
 <div align=center>
-  <h1>Dirjson</h1>
+  <h1>Directory JSON</h1>
   <h6>Converts a directory structure into JSON</h6>
 </div>
 
 ## Installation
 
 ```shell
-npm install dirjson --save
+npm install directory-json --save
 ```
 
 ## Project Usage
 
 ```javascript
-var dirJson = require('dirjson')
+var directoryJson = require('directory-json')
 
-dirjson('./path/to/my/dir', function (err, res) {
+directoryJson('./path/to/my/dir', function (err, res) {
   if (err) return console.error(err)
   console.log(res);
 });
@@ -23,7 +23,7 @@ dirjson('./path/to/my/dir', function (err, res) {
 ## Cli Usage
 
 ```shell
-  Usage: dirjson [options] <dir>
+  Usage: directory-json [options] <dir>
 
   Converts a directory structure into JSON
 

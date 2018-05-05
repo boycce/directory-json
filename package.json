@@ -1,6 +1,6 @@
 {
-  "name": "dirjson",
-  "description": "Converts a directory strucutre into json",
+  "name": "directory json",
+  "description": "Converts a directory strcture into JSON",
   "license": "MIT",
   "version": "0.0.1",
   "main": "main.js",
@@ -10,7 +10,7 @@
     "url": "https://rickyboyce.com"
   },
   "bin": {
-    "dirjson": "bin/dirjson"
+    "directory-json": "bin/directory-json"
   },
   "dependencies": {
     "async": "^2.6.0",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Boycce/dirjson.git"
+    "url": "https://github.com/Boycce/directory-json.git"
   },
   "keywords": [
     "json",
