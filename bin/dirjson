@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+'use strict'
+
+var dirjson = require('../main')
+var commander = require('commander')
+
+// Parse arguments
+commander
+  .version('0.0.1', '-v, --version')
+  .description('Converts a directory strucutre into JSON')
+  .usage('[options] <dir>')
+  .option('-c, --cwd <dir>', 'Relative from this directory')
+  .option('-r, --recurse', 'Recurse sub-directories')
+  .option('-l, --hash-length <n>', 'Length of the hash to remove from key names', parseInt)
+  .option('-p, --pretty', 'Pretty print the JSON output')
+  .parse(process.argv)
+
+// No directory passed
+if (!commander.args.length) commander.help()
+
+var opts = {
+  cwd: commander.cwd,
+  recurse: commander.recurse,
+  hashLength: commander.removeHash,
+  pretty: commander.pretty
+}
+
+dirjson(commander.args[0], opts, function (err, res) {
+  if (err) return console.error(err)
+  console.log(res)
+})
